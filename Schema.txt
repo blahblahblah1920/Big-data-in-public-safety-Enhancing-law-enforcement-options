@@ -1,0 +1,59 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS arrest_data_dallas
+(
+`age` INT,
+`occupation` STRING,
+`drugrelated` BOOLEAN,
+`tatoo` STRING,
+`birthplace` STRING,
+`drugtype` STRING,
+`drug` BOOLEAN,
+`sex` STRING,
+`height` DOUBLE,
+`nickname` BOOLEAN,
+`arcurrloc` STRING,
+`hzip` INT,
+`upzdate` TIMESTAMP,
+`araction` STRING,
+`employer` STRING,
+`arpremises` STRING,
+`aradow` STRING,
+`arldistrict` STRING,
+`arrestyr` INT,
+`hstate` STRING,
+`hcity` STRING,
+`ethnic` STRING,
+`race` STRING,
+`eyes` STRING,
+`hair` STRING,
+`ageatarresttime` INT,
+`arweapon` STRING,
+`arlcounty` STRING,
+`arstate` STRING,
+`arlcity` STRING,
+`arlzip` INT,
+`arladdress` STRING,
+`arbkdate` TIMESTAMP,
+`ararresttime` STRING,
+`ararrestdate` TIMESTAMP,
+`weight` INT
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+LOCATION '/user/pranavmoses/data/arrestdata/'
+TBLPROPERTIES ("skip.header.line.count"="1");
+
+
+
+
+Error: Cannot write incompatible data to table '`default`.`arrest_data_dallas`':
+- Cannot safely cast 'drugrelated': string to boolean
+- Cannot safely cast 'drug': timestamp to boolean
+- Cannot safely cast 'height': string to double
+- Cannot safely cast 'nickname': string to boolean
+- Cannot safely cast 'hzip': string to int
+- Cannot safely cast 'upzdate': bigint to timestamp
+- Cannot safely cast 'arrestyr': boolean to int
+- Cannot safely cast 'ageatarresttime': string to int
+- Cannot safely cast 'arlzip': string to int
+- Cannot safely cast 'arbkdate': string to timestamp
